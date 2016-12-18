@@ -1,0 +1,49 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+
+android {
+    compileSdkVersion rootProject.compileSdk
+    buildToolsVersion rootProject.buildTools
+    defaultConfig {
+        applicationId "com.droidexperiments.android.rememberthisplace"
+        minSdkVersion rootProject.minSdk
+        targetSdkVersion rootProject.targetSdk
+        versionCode rootProject.versionCode
+        versionName rootProject.versionName
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary true
+        setProperty("archivesBaseName", "Locate-v${versionCode}-${versionName}")
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        //todo uncomment when release & upload proguard mapping to firebase crash reporting
+        /*release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }*/
+    }
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
+    dataBinding {
+        enabled true
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile "junit:junit:${rootProject.junit}"
+    compile "org.jetbrains.kotlin:kotlin-stdlib:${rootProject.kotlinStdLib}"
+    compile "com.android.support:appcompat-v7:${rootProject.supportLib}"
+    compile "com.jakewharton.timber:timber:${rootProject.timber}"
+    compile "com.github.satyan:sugar:${rootProject.sugarOrm}"
+    compile "com.google.firebase:firebase-crash:${rootProject.firebase}"
+    compile "com.google.firebase:firebase-auth:${rootProject.firebase}"
+}
+
+apply plugin: 'com.google.gms.google-services'
+

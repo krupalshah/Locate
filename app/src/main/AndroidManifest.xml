@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.experiments.locate">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:name=".Locate"
+        android:allowBackup="true"
+        android:description="@string/app_desc"
+        android:fullBackupContent="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".view.activity.LaunchScreenActivity"
+            android:noHistory="true"
+            android:theme="@style/LauncherTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".view.activity.AppIntroActivity"
+            android:theme="@style/FullScreenTheme">
+
+        </activity>
+        <activity android:name=".view.activity.HomeActivity"
+            android:theme="@style/AppTheme">
+
+        </activity>
+
+        <meta-data
+            android:name="DATABASE"
+            android:value="@string/db_name" />
+        <meta-data
+            android:name="VERSION"
+            android:value="@string/db_version" />
+        <meta-data
+            android:name="QUERY_LOG"
+            android:value="@string/enable_query_log" />
+        <meta-data
+            android:name="DOMAIN_PACKAGE_NAME"
+            android:value="com.experiments.locate" />
+
+    </application>
+
+</manifest>

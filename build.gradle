@@ -1,0 +1,44 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    ext {
+        kotlinVersion = '1.0.5-2'
+        playServicesPlugin = '3.0.0'
+        gradlePlugin = '2.2.3'
+    }
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:${gradlePlugin}"
+        classpath "com.google.gms:google-services:${playServicesPlugin}"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlinVersion}"
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+    }
+}
+ext {
+    //sdk & tools
+    minSdk = 16
+    compileSdk = 25
+    targetSdk = 25
+    buildTools = '25.0.2'
+    versionCode = 4
+    versionName = '4.0.1'
+
+    //dependencies
+    kotlinStdLib = "${kotlinVersion}"
+    junit = '4.12'
+    supportLib = '25.1.0'
+    firebase = '10.0.0'
+    sugarOrm = '1.5'
+    timber = '4.4.0'
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

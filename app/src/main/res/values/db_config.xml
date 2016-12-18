@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="db_name">locatedb</string>
+    <string name="db_version">locatedb</string>
+    <string name="enable_query_log">true</string>
+</resources>
