@@ -1,5 +1,4 @@
 #Locate
-Remember places, not addresses!
 <pre>
    Copyright 2016 Krupal Shah
 
