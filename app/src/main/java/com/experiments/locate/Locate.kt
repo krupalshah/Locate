@@ -35,6 +35,4 @@ class Locate : SugarApp() {
         super.onLowMemory()
         ErrorReporter.reportBehaviour(message = "onLowMemory() called")
     }
-
-
 }

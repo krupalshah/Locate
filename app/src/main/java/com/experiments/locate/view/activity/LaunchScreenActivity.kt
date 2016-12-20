@@ -37,7 +37,6 @@ class LaunchScreenActivity : BaseActivity() {
         val isIntroShown: Boolean? = defaultPrefs(this)[Consts.SharedPrefs.IS_APP_INTRO_SHOWN]
         if (isIntroShown == null || isIntroShown.not()) {
             startActivity(AppIntroActivity.getStartIntent(this))
-            defaultPrefs(this)[Consts.SharedPrefs.IS_APP_INTRO_SHOWN] = true
         } else {
             startActivity(HomeActivity.getStartIntent(this))
         }

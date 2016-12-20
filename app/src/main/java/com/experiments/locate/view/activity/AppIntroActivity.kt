@@ -20,6 +20,9 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import com.experiments.locate.R
+import com.experiments.locate.helper.storage.PreferenceHelper.defaultPrefs
+import com.experiments.locate.helper.storage.PreferenceHelper.set
+import com.experiments.locate.util.Consts
 
 /**
  * Created by Krupal Shah on 15-Dec-16.
@@ -33,11 +36,19 @@ class AppIntroActivity : BaseActivity() {
         setContentView(R.layout.activity_intro)
     }
 
+    override fun onDestroy() {
+        onIntroShown()
+        super.onDestroy()
+    }
+
+    private fun onIntroShown() {
+        //updating value in preferences upon destroy of this activity considering that intro has been shown
+        defaultPrefs(this)[Consts.SharedPrefs.IS_APP_INTRO_SHOWN] = true
+    }
+
     companion object Factory {
         fun getStartIntent(context: Context): Intent {
             return Intent(context, AppIntroActivity::class.java)
         }
     }
-
-
 }
