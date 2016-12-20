@@ -18,6 +18,8 @@ package com.experiments.locate.helper.reporting
 
 /**
  * Created by Krupal Shah on 16-Dec-16.
+ * pluggable reporter for analytics
+ * currently using firebase for analytics
  */
 
 object AnalyticsReporter {

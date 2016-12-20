@@ -21,6 +21,11 @@ import android.content.Intent
 import android.os.Bundle
 import com.experiments.locate.R
 
+/**
+ * Created by Krupal Shah on 17-Dec-16.
+ *
+ * activity for home screen which contains location updates
+ */
 class HomeActivity : BaseNetworkActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {

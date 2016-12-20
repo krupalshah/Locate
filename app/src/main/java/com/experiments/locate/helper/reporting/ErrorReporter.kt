@@ -24,7 +24,7 @@ import timber.log.Timber
 /**
  * Created by Krupal Shah on 16-Dec-16.
  *
- * pluggable non fatal errors & behaviour reporter for app
+ * pluggable reporter for non fatal errors & behavioural conditions
  * currently using timber as logger & firebase as crash reporter
  */
 object ErrorReporter {
@@ -54,12 +54,12 @@ object ErrorReporter {
     }
 
     /**
-     * to report any behavioural message
+     * reports any behavioural message
      */
     fun reportBehaviour(message: String) = FirebaseCrash.log(message)
 
     /**
-     * to report cached exceptions
+     * reports cached exceptions
      */
     fun reportNonFatal(error: Throwable) = FirebaseCrash.report(error)
 

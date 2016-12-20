@@ -21,6 +21,8 @@ import com.orm.SugarApp
 
 /**
  * Created by Krupal Shah on 15-Dec-16.
+ *
+ * application class
  */
 class Locate : SugarApp() {
 

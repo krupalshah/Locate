@@ -25,6 +25,8 @@ import com.experiments.locate.R
 
 /**
  * Created by Krupal Shah on 16-Dec-16.
+ *
+ * fragment for view pager in app intro
  */
 
 class IntroductionFragment : Fragment() {

@@ -18,6 +18,8 @@ package com.experiments.locate.util
 
 /**
  * Created by Krupal Shah on 18-Dec-16.
+ *
+ * contains all constants
  */
 
 class Consts {

@@ -21,6 +21,8 @@ import android.content.SharedPreferences
 
 /**
  * Created by Krupal Shah on 17-Dec-16.
+ *
+ * helper for shared prefs
  */
 object PreferenceHelper {
 
@@ -38,6 +40,9 @@ object PreferenceHelper {
         editor.apply()
     }
 
+    /**
+     * puts a key value pair in sharedprefs if doesn't exists, otherwise updates value on given key
+     */
     operator fun SharedPreferences.set(key: String, value: Any) {
         when (value) {
             is String -> edit(operation = { editor -> editor.putString(key, value) })
@@ -48,6 +53,10 @@ object PreferenceHelper {
         }
     }
 
+    /**
+     * get get value on given key.
+     *[T] is type of class for needed value
+     */
     operator inline fun <reified T> SharedPreferences.get(key: String): T? {
         when (T::class) {
             String::class -> getString(key, null)

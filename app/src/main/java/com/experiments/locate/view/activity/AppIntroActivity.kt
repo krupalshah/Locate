@@ -23,6 +23,8 @@ import com.experiments.locate.R
 
 /**
  * Created by Krupal Shah on 15-Dec-16.
+ *
+ * activity for app introduction
  */
 class AppIntroActivity : BaseActivity() {
 

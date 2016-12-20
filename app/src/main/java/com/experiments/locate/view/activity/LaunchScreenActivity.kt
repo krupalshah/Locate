@@ -24,6 +24,8 @@ import com.experiments.locate.util.Consts
 
 /**
  * Created by Krupal Shah on 18-Dec-16.
+ *
+ *  activity for launch screen (preferred way for splash screen)
  */
 
 class LaunchScreenActivity : BaseActivity() {

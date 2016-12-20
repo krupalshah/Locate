@@ -25,6 +25,8 @@ import timber.log.Timber
 
 /**
  * Created by Krupal Shah on 16-Dec-16.
+ *
+ * receiver that needs to be registered at activity level (from 24) in order to receive network updates
  */
 
 class NetworkChangeReceiver(val networkListener: NetworkListener?) : BroadcastReceiver() {

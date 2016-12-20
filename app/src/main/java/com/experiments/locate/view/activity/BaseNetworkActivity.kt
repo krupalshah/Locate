@@ -25,6 +25,9 @@ import com.experiments.locate.helper.network.NetworkListener
 
 /**
  * Created by Krupal Shah on 17-Dec-16.
+ *
+ * base class for all activities requiring network
+ * as starting from api level 24, receiver for network updates needs to be registered at activity level
  */
 
 abstract class BaseNetworkActivity : BaseActivity(), NetworkListener {

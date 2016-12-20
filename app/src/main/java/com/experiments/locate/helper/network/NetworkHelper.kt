@@ -22,6 +22,8 @@ import android.telephony.TelephonyManager
 
 /**
  * Created by Krupal Shah on 17-Dec-16.
+ *
+ * helper class for connectivity
  */
 object NetworkHelper {
 
@@ -31,6 +33,9 @@ object NetworkHelper {
     fun telephonyManager(context: Context)
             = context.applicationContext.getSystemService(Context.TELEPHONY_SERVICE) as TelephonyManager?
 
+    /**
+     * @return true if network information is available and network is connected, false otherwise
+     */
     fun isNetworkConnected(context: Context): Boolean {
         val connectivityManager = connectivityManager(context)
         val activeNetworkInfo = connectivityManager?.activeNetworkInfo
@@ -39,12 +44,18 @@ object NetworkHelper {
                 activeNetworkInfo.isConnected
     }
 
+    /**
+     * @return true if network information is available but network is metered. so data charges may apply, false otherwise
+     */
     fun isNetworkMetered(context: Context): Boolean {
         val connectivityManager = connectivityManager(context)
         return connectivityManager != null
                 && connectivityManager.isActiveNetworkMetered
     }
 
+    /**
+     * @return true if device has low bandwidth (2g) connectivity, false otherwise
+     */
     fun isLowSpeedNetwork(context: Context): Boolean {
         val telephonyManager = telephonyManager(context)
         val networkType = telephonyManager?.networkType
